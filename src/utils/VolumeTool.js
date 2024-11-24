@@ -171,10 +171,10 @@ export class VolumeTool extends EventDispatcher{
 			return node.getPointsInBox(volume);
 		});
 
-		const flatPositions = pointNodes.map(node => node.positions).flat();
+		const flatNodes = pointNodes.flat();
 		let points = new Points();
-		points.numPoints = flatPositions.length / 3; // 3 because xyz
-		points.data["position"] = new Float64Array(flatPositions);
+		points.numPoints = flatNodes.length / 3; // 3 because xyz
+		points.data["position"] = new Float64Array(flatNodes);
 
 		return points;
 	}
